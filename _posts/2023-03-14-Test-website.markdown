@@ -6,4 +6,4 @@ categories: test webpage
 ---
 
 Some random content
-![Plot](/Images/test.html)
+{% include test.html content="This is my sample note." %}
