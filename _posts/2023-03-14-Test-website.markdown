@@ -6,3 +6,4 @@ categories: test webpage
 ---
 
 Some random content
+![Plot](/Images/test.html)
