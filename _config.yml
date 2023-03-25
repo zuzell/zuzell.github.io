@@ -1,17 +1,10 @@
-# Dependencies
-markdown:         kramdown
-highlighter:      pygments
-
-# Permalinks
-permalink:        pretty
-
-
 # Setup
-title:            Social data analysis
-tagline:          'A Jekyll theme'
-description:      'This is a test webpage for the course'
-url:              ""
-baseurl:          ""
+title: Poole
+tagline: The Jekyll Butler
+url: https://getpoole.com
+paginate: 1
+baseurl: ""
+permalink: pretty
 
 # Gems
 plugins:
@@ -19,13 +12,30 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
 
+# Optimize Jekyll
+exclude:
+  - .editorconfig
+  - .git
+  - .jekyll-cache
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.md
+  - README.md
+
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+# Options
+
+# Replace this value and uncomment to enable Google Analytics tracking
+# ga_analytics: UA-000000-0
+
+# Specify the author for blog posts
 author:
-  name:           'Zuzanna'
-
-
-paginate:         5
+  name: Mark Otto
+  url: https://twitter.com/mdo
+  email: markdotto@gmail.com
 
 # Custom vars
-version:          2.1.0
-
-
+version: 3.0.0
