@@ -34,8 +34,8 @@ sass:
 # Specify the author for blog posts
 author:
   name: Zuzanna
-  url: 
-  email: 
+  url: ""
+  email: ""
 
 # Custom vars
 version: 3.0.0
