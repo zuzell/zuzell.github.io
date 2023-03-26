@@ -1,9 +1,10 @@
 # Setup
+
 title: Assignment 2
 tagline: Social data analysis and visualization (02806)
-url: ""
+url: "https://zuzell.github.io"
 paginate: 1
-baseurl: ""
+baseurl: "/zuzell.github.io"
 permalink: pretty
 
 # Gems
