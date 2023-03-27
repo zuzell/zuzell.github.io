@@ -1,279 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-    
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
-        <script>
-            L_NO_TOUCH = false;
-            L_DISABLE_3D = false;
-        </script>
-    
-    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    
-            <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>
-                #map_c5bf059b0aa057b9aac3d9429421ed4f {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-                .leaflet-container { font-size: 1rem; }
-            </style>
-        
-</head>
-<body>
-    
-    
-            <div class="folium-map" id="map_c5bf059b0aa057b9aac3d9429421ed4f" ></div>
-        
-</body>
-<script>
-    
-    
-            var map_c5bf059b0aa057b9aac3d9429421ed4f = L.map(
-                "map_c5bf059b0aa057b9aac3d9429421ed4f",
-                {
-                    center: [37.77919, -122.41914],
-                    crs: L.CRS.EPSG3857,
-                    zoom: 14,
-                    zoomControl: true,
-                    preferCanvas: false,
-                }
-            );
+---
+layout: default
+title: Home
+---
 
-            
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
 
-        
-    
-            var tile_layer_995141c90746188eb31f51e9ed7844a8 = L.tileLayer(
-                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
-                {"attribution": "Map tiles by \u003ca target=\"_blank\" href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_c5bf059b0aa057b9aac3d9429421ed4f);
-        
-    
-            var circle_marker_afbd84938885f0ded50527b9f9ea2bac = L.circleMarker(
-                [37.7604330003754, -122.415929849548],
-                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1f77b4", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 5}
-            ).addTo(map_c5bf059b0aa057b9aac3d9429421ed4f);
-        
-    
-        var popup_4f52addb6a7bf0aac1373bf6fbc8c493 = L.popup({"maxWidth": "100%"});
+    <span class="post-date">{{ post.date | date_to_string }}</span>
 
-        
-            
-                var html_f2a58da549995bba454d842466add880 = $(`<div id="html_f2a58da549995bba454d842466add880" style="width: 100.0%; height: 100.0%;"><i>PROSTITUTION</i></div>`)[0];
-                popup_4f52addb6a7bf0aac1373bf6fbc8c493.setContent(html_f2a58da549995bba454d842466add880);
-            
-        
+    {{ post.content }}
+  </div>
+  {% endfor %}
+</div>
 
-        circle_marker_afbd84938885f0ded50527b9f9ea2bac.bindPopup(popup_4f52addb6a7bf0aac1373bf6fbc8c493)
-        ;
-
-        
-    
-    
-            var circle_marker_6a3c32b2fb595561d8b9b9bd73d654e8 = L.circleMarker(
-                [37.7844496612562, -122.416075285059],
-                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1f77b4", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 5}
-            ).addTo(map_c5bf059b0aa057b9aac3d9429421ed4f);
-        
-    
-        var popup_c79614da367fa5c836de1f066df00edb = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_028115ed34dfe79bd061f7575d737e9d = $(`<div id="html_028115ed34dfe79bd061f7575d737e9d" style="width: 100.0%; height: 100.0%;"><i>PROSTITUTION</i></div>`)[0];
-                popup_c79614da367fa5c836de1f066df00edb.setContent(html_028115ed34dfe79bd061f7575d737e9d);
-            
-        
-
-        circle_marker_6a3c32b2fb595561d8b9b9bd73d654e8.bindPopup(popup_c79614da367fa5c836de1f066df00edb)
-        ;
-
-        
-    
-    
-            var circle_marker_098eefbb72996858b966414a8411c057 = L.circleMarker(
-                [37.7844496612791, -122.416075285051],
-                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1f77b4", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 5}
-            ).addTo(map_c5bf059b0aa057b9aac3d9429421ed4f);
-        
-    
-        var popup_0b65747953f0980525063f116dbc1b1f = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_eeea2ca650e5715f8ddfb1b70d8c6060 = $(`<div id="html_eeea2ca650e5715f8ddfb1b70d8c6060" style="width: 100.0%; height: 100.0%;"><i>PROSTITUTION</i></div>`)[0];
-                popup_0b65747953f0980525063f116dbc1b1f.setContent(html_eeea2ca650e5715f8ddfb1b70d8c6060);
-            
-        
-
-        circle_marker_098eefbb72996858b966414a8411c057.bindPopup(popup_0b65747953f0980525063f116dbc1b1f)
-        ;
-
-        
-    
-    
-            var circle_marker_6f32746853a449d820a093bddf85ea63 = L.circleMarker(
-                [37.7636337703031, -122.416230392551],
-                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1f77b4", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 5}
-            ).addTo(map_c5bf059b0aa057b9aac3d9429421ed4f);
-        
-    
-        var popup_e7b434c3a00108e38fb396510abafde7 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_6b66203c6fb10a8c533b4d76c3de1f89 = $(`<div id="html_6b66203c6fb10a8c533b4d76c3de1f89" style="width: 100.0%; height: 100.0%;"><i>PROSTITUTION</i></div>`)[0];
-                popup_e7b434c3a00108e38fb396510abafde7.setContent(html_6b66203c6fb10a8c533b4d76c3de1f89);
-            
-        
-
-        circle_marker_6f32746853a449d820a093bddf85ea63.bindPopup(popup_e7b434c3a00108e38fb396510abafde7)
-        ;
-
-        
-    
-    
-            var circle_marker_ee22174a2e3653231e602eed468677b0 = L.circleMarker(
-                [37.7636337702985, -122.416230392543],
-                {"bubblingMouseEvents": true, "color": "#1f77b4", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#1f77b4", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2, "stroke": true, "weight": 5}
-            ).addTo(map_c5bf059b0aa057b9aac3d9429421ed4f);
-        
-    
-        var popup_6d55020dbed226a360a0a0bb30aa1213 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_716577bcb6e46ff3e2b10e2abe6bd4c2 = $(`<div id="html_716577bcb6e46ff3e2b10e2abe6bd4c2" style="width: 100.0%; height: 100.0%;"><i>PROSTITUTION</i></div>`)[0];
-                popup_6d55020dbed226a360a0a0bb30aa1213.setContent(html_716577bcb6e46ff3e2b10e2abe6bd4c2);
-            
-        
-
-        circle_marker_ee22174a2e3653231e602eed468677b0.bindPopup(popup_6d55020dbed226a360a0a0bb30aa1213)
-        ;
-
-        
-    
-    
-            var circle_marker_bcf52526a93139d1f1cae20c348fa995 = L.circleMarker(
-                [37.7642205603745, -122.41965834371],
-                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff7f0e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 5}
-            ).addTo(map_c5bf059b0aa057b9aac3d9429421ed4f);
-        
-    
-        var popup_bbfbbbb9bc817082ae0b6aa1419e6e4e = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_7f1c1f846c861bfd90188bb5880f1947 = $(`<div id="html_7f1c1f846c861bfd90188bb5880f1947" style="width: 100.0%; height: 100.0%;"><i>DRUG/NARCOTIC</i></div>`)[0];
-                popup_bbfbbbb9bc817082ae0b6aa1419e6e4e.setContent(html_7f1c1f846c861bfd90188bb5880f1947);
-            
-        
-
-        circle_marker_bcf52526a93139d1f1cae20c348fa995.bindPopup(popup_bbfbbbb9bc817082ae0b6aa1419e6e4e)
-        ;
-
-        
-    
-    
-            var circle_marker_ce35bec1b85f12df1062d5b5b7eaa0ff = L.circleMarker(
-                [37.775420706711, -122.403404791479],
-                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff7f0e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 5}
-            ).addTo(map_c5bf059b0aa057b9aac3d9429421ed4f);
-        
-    
-        var popup_d98346ab667f98e6c734899e61ccf447 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_435954ae3fa07a33b24da81d9f8146bf = $(`<div id="html_435954ae3fa07a33b24da81d9f8146bf" style="width: 100.0%; height: 100.0%;"><i>DRUG/NARCOTIC</i></div>`)[0];
-                popup_d98346ab667f98e6c734899e61ccf447.setContent(html_435954ae3fa07a33b24da81d9f8146bf);
-            
-        
-
-        circle_marker_ce35bec1b85f12df1062d5b5b7eaa0ff.bindPopup(popup_d98346ab667f98e6c734899e61ccf447)
-        ;
-
-        
-    
-    
-            var circle_marker_d2c5470ddaeac0b544e5cd5333b2ba6f = L.circleMarker(
-                [37.7833862379382, -122.409853729941],
-                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff7f0e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 5}
-            ).addTo(map_c5bf059b0aa057b9aac3d9429421ed4f);
-        
-    
-        var popup_63033116c6133798cc8a14fb1b8ea116 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_f9119c88a00cfc59c0ec359e008bb164 = $(`<div id="html_f9119c88a00cfc59c0ec359e008bb164" style="width: 100.0%; height: 100.0%;"><i>DRUG/NARCOTIC</i></div>`)[0];
-                popup_63033116c6133798cc8a14fb1b8ea116.setContent(html_f9119c88a00cfc59c0ec359e008bb164);
-            
-        
-
-        circle_marker_d2c5470ddaeac0b544e5cd5333b2ba6f.bindPopup(popup_63033116c6133798cc8a14fb1b8ea116)
-        ;
-
-        
-    
-    
-            var circle_marker_c86200e52d4d5037dc81b104bd98e6e7 = L.circleMarker(
-                [37.7827931071006, -122.414056291891],
-                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff7f0e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 5}
-            ).addTo(map_c5bf059b0aa057b9aac3d9429421ed4f);
-        
-    
-        var popup_a8698937c9fbbfd9c5e6b5502921e995 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_a4907694fd4b3009e39baf96edd2af0f = $(`<div id="html_a4907694fd4b3009e39baf96edd2af0f" style="width: 100.0%; height: 100.0%;"><i>DRUG/NARCOTIC</i></div>`)[0];
-                popup_a8698937c9fbbfd9c5e6b5502921e995.setContent(html_a4907694fd4b3009e39baf96edd2af0f);
-            
-        
-
-        circle_marker_c86200e52d4d5037dc81b104bd98e6e7.bindPopup(popup_a8698937c9fbbfd9c5e6b5502921e995)
-        ;
-
-        
-    
-    
-            var circle_marker_1524612c7f026e8588e044c7c609c22b = L.circleMarker(
-                [37.7817511307229, -122.411071423064],
-                {"bubblingMouseEvents": true, "color": "#ff7f0e", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ff7f0e", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 5}
-            ).addTo(map_c5bf059b0aa057b9aac3d9429421ed4f);
-        
-    
-        var popup_ac0450dc8d2e70229267af1c5cc83d59 = L.popup({"maxWidth": "100%"});
-
-        
-            
-                var html_9706cc1d8ea561c2a80ff9ebe1398eac = $(`<div id="html_9706cc1d8ea561c2a80ff9ebe1398eac" style="width: 100.0%; height: 100.0%;"><i>DRUG/NARCOTIC</i></div>`)[0];
-                popup_ac0450dc8d2e70229267af1c5cc83d59.setContent(html_9706cc1d8ea561c2a80ff9ebe1398eac);
-            
-        
-
-        circle_marker_1524612c7f026e8588e044c7c609c22b.bindPopup(popup_ac0450dc8d2e70229267af1c5cc83d59)
-        ;
-
-        
-    
-</script>
-</html>
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
