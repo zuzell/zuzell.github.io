@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bokeh Plot</title>
+<style>
+      html, body {
+        box-sizing: border-box;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.0.3.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
+  </head>
+  <body>
+    <div id="4f2a0de6-562e-4a75-a0cf-3ff1c6ab0384" data-root-id="p1015" style="display: contents;"></div>
+  
+    <script type="application/json" id="p1516">
+      {"a99c4513-2ff3-4990-b268-2f33d473536f":{"version":"3.0.3","title":"Bokeh Application","defs":[],"roots":[{"type":"object","name":"Figure","id":"p1015","attributes":{"visible":false,"width":1000,"height":750,"x_range":{"type":"object","name":"FactorRange","id":"p1014","attributes":{"factors":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]}},"y_range":{"type":"object","name":"DataRange1d","id":"p1017"},"x_scale":{"type":"object","name":"CategoricalScale","id":"p1028"},"y_scale":{"type":"object","name":"LinearScale","id":"p1030"},"title":{"type":"object","name":"Title","id":"p1018","attributes":{"text":"Crimes Counts by Days"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1067","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1005","attributes":{"selected":{"type":"object","name":"Selection","id":"p1006","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1007"},"data":{"type":"map","entries":[["index",{"type":"ndarray","array":{"type":"bytes","data":"AAAAAAEAAAACAAAAAwAAAAQAAAAFAAAABgAAAA=="},"shape":[7],"dtype":"int32","order":"little"}],["DayOfWeek",{"type":"ndarray","array":["Friday","Monday","Saturday","Sunday","Thursday","Tuesday","Wednesday"],"shape":[7],"dtype":"object","order":"little"}],["DRUG/NARCOTIC",{"type":"ndarray","array":{"type":"bytes","data":"XMc+0O8Hwj8RdgYGsRTBP8DfkOCLw78/dQ2cmHzevT/QbNKYFSTEP+glnf4Ls8M/QLm0VTk7xj8="},"shape":[7],"dtype":"float64","order":"little"}],["PROSTITUTION",{"type":"ndarray","array":{"type":"bytes","data":"Qt/pVFgbyD/NI7eaHA+0Pxarp+TnGcA/VIN6uffxsT/7ksF0mSXRP7bFe7Clqb8/R5mU2i+qwj8="},"shape":[7],"dtype":"float64","order":"little"}]]}}},"view":{"type":"object","name":"CDSView","id":"p1068","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1069"}}},"glyph":{"type":"object","name":"VBar","id":"p1064","attributes":{"x":{"type":"field","field":"year"},"width":{"type":"value","value":0.85},"top":{"type":"field","field":"DRUG/NARCOTIC"},"line_alpha":{"type":"value","value":0.75},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#614BD9"},"fill_alpha":{"type":"value","value":0.75},"hatch_alpha":{"type":"value","value":0.75}}},"nonselection_glyph":{"type":"object","name":"VBar","id":"p1065","attributes":{"x":{"type":"field","field":"year"},"width":{"type":"value","value":0.85},"top":{"type":"field","field":"DRUG/NARCOTIC"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#614BD9"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"VBar","id":"p1066","attributes":{"x":{"type":"field","field":"year"},"width":{"type":"value","value":0.85},"top":{"type":"field","field":"DRUG/NARCOTIC"},"line_alpha":{"type":"value","value":0.03},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#614BD9"},"fill_alpha":{"type":"value","value":0.03},"hatch_alpha":{"type":"value","value":0.03}}}}},{"type":"object","name":"GlyphRenderer","id":"p1091","attributes":{"data_source":{"id":"p1005"},"view":{"type":"object","name":"CDSView","id":"p1092","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1093"}}},"glyph":{"type":"object","name":"VBar","id":"p1088","attributes":{"x":{"type":"field","field":"year"},"width":{"type":"value","value":0.85},"top":{"type":"field","field":"PROSTITUTION"},"line_alpha":{"type":"value","value":0.75},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#FF297B"},"fill_alpha":{"type":"value","value":0.75},"hatch_alpha":{"type":"value","value":0.75}}},"nonselection_glyph":{"type":"object","name":"VBar","id":"p1089","attributes":{"x":{"type":"field","field":"year"},"width":{"type":"value","value":0.85},"top":{"type":"field","field":"PROSTITUTION"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#FF297B"},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"VBar","id":"p1090","attributes":{"x":{"type":"field","field":"year"},"width":{"type":"value","value":0.85},"top":{"type":"field","field":"PROSTITUTION"},"line_alpha":{"type":"value","value":0.03},"line_width":{"type":"value","value":2},"fill_color":{"type":"value","value":"#FF297B"},"fill_alpha":{"type":"value","value":0.03},"hatch_alpha":{"type":"value","value":0.03}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1022","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1045"},{"type":"object","name":"WheelZoomTool","id":"p1046"},{"type":"object","name":"BoxZoomTool","id":"p1047","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1048","attributes":{"syncable":false,"level":"overlay","visible":false,"left_units":"canvas","right_units":"canvas","bottom_units":"canvas","top_units":"canvas","line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5}}}},{"type":"object","name":"SaveTool","id":"p1049"},{"type":"object","name":"ResetTool","id":"p1050"},{"type":"object","name":"HelpTool","id":"p1051"}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1038","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1039","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1041"},"axis_label":"Frequency","major_label_policy":{"type":"object","name":"AllLabels","id":"p1040"}}}],"below":[{"type":"object","name":"CategoricalAxis","id":"p1032","attributes":{"ticker":{"type":"object","name":"CategoricalTicker","id":"p1033"},"formatter":{"type":"object","name":"CategoricalTickFormatter","id":"p1035"},"axis_label":"Days","major_label_policy":{"type":"object","name":"AllLabels","id":"p1034"}}}],"center":[{"type":"object","name":"Grid","id":"p1037","attributes":{"axis":{"id":"p1032"}}},{"type":"object","name":"Grid","id":"p1044","attributes":{"dimension":1,"axis":{"id":"p1038"}}},{"type":"object","name":"Legend","id":"p1083","attributes":{"click_policy":"mute","items":[{"type":"object","name":"LegendItem","id":"p1084","attributes":{"label":{"type":"value","value":"DRUG/NARCOTIC"},"renderers":[{"id":"p1067"}]}},{"type":"object","name":"LegendItem","id":"p1110","attributes":{"label":{"type":"value","value":"PROSTITUTION"},"renderers":[{"id":"p1091"}]}}]}}]}}]}}
+    </script>
+    <script type="text/javascript">
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('p1516').textContent;
+              const render_items = [{"docid":"a99c4513-2ff3-4990-b268-2f33d473536f","roots":{"p1015":"4f2a0de6-562e-4a75-a0cf-3ff1c6ab0384"},"root_ids":["p1015"]}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+      })();
+    </script>
+  </body>
+</html>

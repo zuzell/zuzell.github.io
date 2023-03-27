@@ -17,7 +17,7 @@ df=df[(df['Date'].dt.strftime('%Y') < '2018') & (df['Date'].dt.strftime('%Y') > 
 df['Year'] = df['Date'].dt.year
 
 #timeseries
-categories = ['DRUNKENNESS', 'DRUG/NARCOTIC', 'PROSTITUTION']
+categories = ['DRUG/NARCOTIC', 'PROSTITUTION']
 
 df['Time'] = pd.to_datetime(df['Time'], format='%H:%M')
 df['Hour'] = df['Time'].dt.hour
@@ -43,12 +43,12 @@ source = ColumnDataSource(df_day)
 #Factor ranges
 hours = [str(x+1) for x in range(24)]
 days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-years = df['Year'].unique().astype(str).tolist()
+years = sorted(df['Year'].astype(str).unique())
 
 
 
 # Define the colors for each category
-colors = ["#BE98CB", "#A7DF9A", "#3571E4"]
+colors = ["#614BD9", "#FF297B","#0077AD", "#FF8B1F", "#A7DF9A", "#3571E4"]
 
 # Define the options for the dropdown menu
 options = ["Days", "Years", "Hours"]
@@ -70,8 +70,14 @@ def create_plot(x_range, source, x_label, title):
     legend = Legend(items=[], location="top_left")
 
     bar = {}  # to store vbars
+    
     for indx, i in enumerate(categories):
-        bar[i] = p.vbar(x='index', top=i, source=source, muted_alpha=0.2, color=colors[indx % len(colors)])
+        bar[i] = p.vbar(x=source.column_names[0], top=i, source=source, muted_alpha=0.2, line_color="black", 
+                    line_width=0.5,
+                    alpha=0.75,
+                    width = 0.9,
+                    color=colors[indx % len(colors)])
+        
         legend_item = LegendItem(label=i, renderers=[bar[i]])
         legend.items.append(legend_item)
 
@@ -87,17 +93,44 @@ def create_plot(x_range, source, x_label, title):
 
     return p
 
-source_day = ColumnDataSource(df_day.reset_index())
-source_year = ColumnDataSource(df_year.reset_index())
-source_hour = ColumnDataSource(df_hour.reset_index())
+def create_plot_ehh(x_range, source, x_label, title):
+    #source = ColumnDataSource(data)
+    p1 = figure(x_range=x_range, x_axis_label=x_label, y_axis_label='Frequency', title=title, width=1000, height=750)
+    
+    legend = Legend(items=[], location="top_left")
 
-p_day = create_plot(FactorRange(factors=days), source_day, "Days", "Crimes Counts by Days")
-p_year = create_plot(FactorRange(factors=years), source_year, "Years", "Crimes Counts by Years")
-p_hour = create_plot(FactorRange(factors=hours), source_hour, "Hours", "Crimes Counts by Hours")
+    bar = {}  # to store vbars
+    for indx, i in enumerate(categories):
+        bar[i] = p1.vbar(x=source.column_names[0], source=source, top=i, legend_label=i, 
+                        width = 0.85,
+                        fill_color=colors[indx],
+                        line_color="black",
+                        line_width=2,
+                        alpha=0.75,
+                        muted_alpha=0.03)
+
+
+    ### Maybe, change the legend position
+
+
+    ### Show and display
+    p1.legend.click_policy="mute"
+
+    return p1
+
+source_day = ColumnDataSource(df_day)
+source_year = ColumnDataSource(df_year)
+source_hour = ColumnDataSource(df_hour)
+
+p_day = create_plot_ehh(FactorRange(factors=days), source_day, "Days", "Crimes Counts by Days")
+p_year = create_plot_ehh(FactorRange(factors=years), source_year, "Years", "Crimes Counts by Years")
+p_hour = create_plot_ehh(FactorRange(factors=hours), source_hour, "Hours", "Crimes Counts by Hours")
 
 p_day.visible = False
 p_year.visible = False
 p_hour.visible = True
+
+
 
 callback = CustomJS(args=dict(p_day=p_day, p_year=p_year, p_hour=p_hour), code="""
     p_day.visible = false;
@@ -116,6 +149,6 @@ picklist.js_on_change('value', callback)
 
 layout = column(picklist, p_day, p_year, p_hour)
 
-output_file("crimes_plot.html")
+output_file("crimes_plot2.html")
 
 show(layout)
